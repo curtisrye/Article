@@ -1,0 +1,13 @@
+parameters:
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    App\:
+        resource: '../src/'
+
+    App\Editorial\Presentation\Http\:
+        resource: '../src/Editorial/Presentation/Http/'
+        tags: ['controller.service_arguments']
