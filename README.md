@@ -2,10 +2,11 @@
 
 ## Install
 
-- Run the docker-compose & install project
+- install docker & docker-compose
+- install project with following commands:
 ```bash
   docker-compose build
-  docker-compose up -d
+  docker-compose up
   docker-compose exec app composer install
   docker-compose exec app bin/console d:m:m
 ```

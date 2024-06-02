@@ -204,7 +204,7 @@ class ArticleRepository implements ArticleRepositoryInterface
                 'tags' => array_map(fn (Tag $tag) => $tag->id(), $newArticle->tags())
             ],
             updatedAt: new \DateTimeImmutable(),
-            updatedBy: $oldArticle->user()->id(),
+            updatedBy: $oldArticle instanceof Article ? $oldArticle->user()->id() : $newArticle->user()->id(),
         ));
     }
 }
