@@ -1,0 +1,25 @@
+parameters:
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    _instanceof:
+        App\Core\Application\Command\CommandHandler:
+            tags: [ 'messenger.message_handler' ]
+
+    App\:
+        resource: '../src/'
+
+    App\Administration\Presentation\Http\:
+        resource: '../src/Administration/Presentation/Http/'
+        tags: [ 'controller.service_arguments' ]
+
+    App\Consulting\Presentation\Http\:
+        resource: '../src/Consulting/Presentation/Http/'
+        tags: [ 'controller.service_arguments' ]
+
+    App\Editorial\Presentation\Http\:
+        resource: '../src/Editorial/Presentation/Http/'
+        tags: ['controller.service_arguments']

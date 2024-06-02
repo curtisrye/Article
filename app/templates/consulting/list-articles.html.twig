@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articles{% endblock %}
+
+{% block body %}
+    <div class="p-5 text-center bg-body-tertiary">
+        <h1 class="mb-3">Welcome on our blog!</h1>
+        <h4 class="mb-3">Read our last published articles</h4>
+    </div>
+    {% for article in articles %}
+        <div class="card mb-4">
+            <div class="card-header">
+                <h1>{{ article.title }}</h1>
+            </div>
+            <div class="card-body">
+                {{ article.content }}
+            </div>
+            <div class="card-footer">
+                Written by {{ article.user.firstName }} {{ article.user.lastName }} - {{ article.releaseDate|date('Y-m-d') }}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

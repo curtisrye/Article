@@ -1,0 +1,17 @@
+administration:
+    resource: ../src/Administration/Presentation/Http/
+    type: annotation
+    options:
+        expose: true
+
+consulting:
+    resource: ../src/Consulting/Presentation/Http/
+    type: annotation
+    options:
+        expose: true
+
+editorial:
+    resource: ../src/Editorial/Presentation/Http/
+    type: annotation
+    options:
+        expose: true
